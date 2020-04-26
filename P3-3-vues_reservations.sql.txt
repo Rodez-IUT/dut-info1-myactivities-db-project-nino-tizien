@@ -1,0 +1,22 @@
+*Nom de la vue* :  
+    "gds.vue_reservations"  
+    - *Description* :   
+    la vue retourne la liste de toutes les réservations. Chaque ligne retournée affiche :
+        - l'id de la réservation 
+        - le nom de la salle réservée
+        - la date de début de la réservation
+        - la date de fin de la réservation
+    Les réservations sont triées sur les noms des salles puis de la date de début la plus récente à la date de début la plus ancienne.
+
+
+CREATE OR REPLACE VIEW gds.vue_reservations AS
+SELECT 
+ res.id as reservation_id,
+ nom as salle,
+ date_debut,
+ date_fin
+FROM 
+ gds.reservation res
+JOIN
+ gds.salle salle ON salle_id = salle.id
+ORDER BY nom, date_debut;
