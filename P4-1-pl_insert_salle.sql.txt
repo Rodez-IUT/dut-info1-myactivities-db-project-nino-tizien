@@ -1,0 +1,12 @@
+Description de la fonction :  
+
+    - *Nom de la fonction* :  
+    "gds.pl_insert_salle"  
+    - *Arguments de la fonction* :  
+    "un_nom" de type "character varying(250)"
+    "un_nb_personnes_max" de type "integer"  
+    - *Description* :   
+    La fonction insert une nouvelle salle dans la table "salle" dont le nom et le nombre de personnes max dans la salle sont transmis en paramètres.
+    La fonction utilise la séquence "gds.salle_seq" pour générer la valeur de la clé primaire de la salle à insérer dans la base. La date de création et la date de modification sont initialisées en utilisant la fonction "now()". 
+    La fonction retourne la salle qui a été insérée.
+
